@@ -1,0 +1,20 @@
+ruby script/generate scaffold project name:string number:integer start_projected:datetime end_projected:datetime start_actual:datetime end_actual:datetime box_count:integer size:integer
+
+ruby script/generate scaffold box project_id:integer serial:string start_projected:datetime end_projected:datetime start_actual:datetime plant_discharge:datetime end_actual:datetime size:integer
+
+ruby script/generate scaffold department name:string
+
+ruby script/generate scaffold punchlist box_id:integer department_id:integer material:string description:text completed:datetime
+
+ruby script/generate scaffold user first_name:string last_name:string user:string password:string role:string
+
+ruby script/generate scaffold session user_id:integer session_hash:string login:datetime
+
+ruby script/generate migration AddLocationToPunchlists location:string
+
+Files modified in adding 'location' field to punchlist:
+\views\qaboxes\_punchlist_list.html.erb
+\views\qaboxes\_new_punchlist.html.erb
+\views\punchlists\edit.html.erb
+\views\productionboxes\show.html.erb
+\views\reports\punchlistbydepartment.html.erb

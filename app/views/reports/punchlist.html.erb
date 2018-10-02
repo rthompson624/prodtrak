@@ -1,0 +1,26 @@
+<h1>Open Punchlist Report</h1>
+
+<h2>Project: <%=h @project.name %></h2>
+
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Plant Discharge</th>
+	<% @departments.each do |department| %>
+	<th><%=h department.name %></th>
+	<% end %>
+  </tr>
+
+<% @boxes.each do |box| %>
+  <tr>
+    <td align="center"><a href="<%=h productionbox_path(box.id) %>"><%=h box.serial %></a></td>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.plant_discharge) %></td>
+	<% @departments.each do |department| %>
+	<td align="center"><%= convertZeroToBlank(Punchlist.count(:conditions => ["completed IS NULL AND box_id = ? AND department_id = ?", box.id.to_s(), department.id.to_s()])) %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Back to Project', project_path(@project) %>

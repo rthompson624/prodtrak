@@ -1,0 +1,114 @@
+/* HTML elements */
+
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: arial, helvetica, verdana, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+  color: #000;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #30319D; }
+a:link {color: #30319D}    /* unvisited link */
+a:visited {color:#30319D}  /* visited link */
+a:hover {color:#ff7733}    /* mouse over link */
+a:active {color:#ff7733}   /* selected link */
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	font-weight: bold;
+	border-bottom: 2px #000 solid;
+	text-align: center;
+	padding: 1px 10px;
+}
+
+td {
+	padding: 1px 10px;
+}
+
+/* My creations */
+
+
+
+/* Custom css (derived from Capsys website) */
+
+#body_wrap {
+	margin-bottom: 20px;
+}
+
+#header {
+}
+
+#logo {
+	height: 105px;
+	padding-left: 48px;
+	background: url("/images/capsys_bg_orange.gif") repeat scroll 0 0 #B6B5A3;
+}
+
+#logo img {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#content {
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+#footer {
+	background-color: #ff7b33;
+}
+
+#footer img {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/* Ruby on Rails generated css */
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}

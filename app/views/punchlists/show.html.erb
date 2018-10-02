@@ -1,0 +1,28 @@
+<p>
+  <b>Box:</b>
+  <%=h @punchlist.box_id %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @punchlist.department_id %>
+</p>
+
+<p>
+  <b>Material:</b>
+  <%=h @punchlist.material %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @punchlist.description %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%=h @punchlist.completed %>
+</p>
+
+
+<%= link_to 'Edit', edit_punchlist_path(@punchlist) %> |
+<%= link_to 'Back', punchlists_path %>

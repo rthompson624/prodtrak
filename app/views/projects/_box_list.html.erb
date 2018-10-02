@@ -1,0 +1,37 @@
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Start (projected)</th>
+    <th>Start (actual)</th>
+    <th>End (projected)</th>
+    <th>Plant Discharge</th>
+    <th>Punchlist Complete</th>
+	<% if @user.role == "superuser" %>
+	<th colspan="2">Update</th>
+	<% end %>
+	<% if (@user.role == "production") || (@user.role == "qa") %>
+	<th>Update</th>
+	<% end %>
+  </tr>
+
+<% boxes.each do |box| %>
+  <tr>
+    <% if (@user.role == "superuser") || (@user.role == "productionadmin") %>
+	<td align="center"><a href="/boxes/<%= box.id %>/admin_edit"><%=h box.serial %></a></td>
+	<% else %>
+	<td align="center"><%=h box.serial %></td>
+	<% end %>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.start_projected) %></td>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.start_actual) %></td>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.end_projected) %></td>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.plant_discharge) %></td>
+    <td align="center"><%=h convertDateTimeToShortFormat(box.end_actual) %></td>
+	<% if (@user.role == "superuser") || (@user.role == "production") %>
+    <td align="center"><a href="/productionboxes/<%= box.id %>/edit">Production</a></td>
+    <% end %>
+	<% if (@user.role == "superuser") || (@user.role == "qa") %>
+	<td align="center"><a href="/qaboxes/<%= box.id %>">Q/A</a></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>

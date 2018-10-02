@@ -1,0 +1,28 @@
+<h1>New Module</h1>
+
+<% form_for(@box) do |f| %>
+  <%= f.error_messages %>
+
+	<%= f.hidden_field :project_id %>
+  <p>
+    <%= f.label "Module #" %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label 'Start projected (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :start_projected %>
+  </p>
+  <p>
+    <%= f.label 'End projected (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :end_projected %>
+  </p>
+  <p>
+    <%= f.label "Size (SF)" %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.submit 'Add' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to Project', @box.project %>

@@ -1,0 +1,28 @@
+<h3>Current Punchlist:</h3>
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Location</th>
+    <th>Material</th>
+    <th>Description</th>
+    <th>Completed</th>
+	<th colspan="2">Update</th>
+  </tr>
+
+<% punchlists.each do |punchlist| %>
+  <tr>
+    <td><%=h punchlist.department.name %></td>
+    <td><%=h punchlist.location %></td>
+    <td><%=h punchlist.material %></td>
+    <td><%=h punchlist.description %></td>
+    <td><%=h convertDateTimeToShortFormat(punchlist.completed) %></td>
+	<% if punchlist.completed.nil? %>
+    	<td><%= link_to 'Edit', edit_punchlist_path(punchlist) %></td>
+		<td><%= link_to 'Sign-off', "/punchlists/" + punchlist.id.to_s() + "/signoff" %></td>
+	<% else %>
+		<td></td>
+		<td></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>

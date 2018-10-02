@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  serial: MyString
+  start_projected: 2010-10-23 19:47:28
+  end_projected: 2010-10-23 19:47:28
+  start_actual: 2010-10-23 19:47:28
+  plant_discharge: 2010-10-23 19:47:28
+  end_actual: 2010-10-23 19:47:28
+  size: 1
+
+two:
+  project_id: 1
+  serial: MyString
+  start_projected: 2010-10-23 19:47:28
+  end_projected: 2010-10-23 19:47:28
+  start_actual: 2010-10-23 19:47:28
+  plant_discharge: 2010-10-23 19:47:28
+  end_actual: 2010-10-23 19:47:28
+  size: 1

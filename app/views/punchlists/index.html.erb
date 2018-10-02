@@ -1,0 +1,28 @@
+<h1>Listing punchlists</h1>
+
+<table>
+  <tr>
+    <th>Box</th>
+    <th>Department</th>
+    <th>Material</th>
+    <th>Description</th>
+    <th>Completed</th>
+  </tr>
+
+<% @punchlists.each do |punchlist| %>
+  <tr>
+    <td><%=h punchlist.box_id %></td>
+    <td><%=h punchlist.department_id %></td>
+    <td><%=h punchlist.material %></td>
+    <td><%=h punchlist.description %></td>
+    <td><%=h punchlist.completed %></td>
+    <td><%= link_to 'Show', punchlist %></td>
+    <td><%= link_to 'Edit', edit_punchlist_path(punchlist) %></td>
+    <td><%= link_to 'Destroy', punchlist, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New punchlist', new_punchlist_path %>

@@ -1,0 +1,61 @@
+<h1>Production Report</h1>
+<h3><%=h convertDateTimeToShortFormat(DateTime.now) %></h3>
+
+<br />
+<h2>Project Details</h2>
+<table>
+	<tr><td>Project:</td><td><%=h @project.name %></td></tr>
+	<tr><td>Number:</td><td><%=h @project.number %></td>
+	<tr><td>Start Date:</td><td><%=h convertDateTimeToShortFormat(@project.start_actual) %></td>
+	<tr><td>End Date (projected):</td><td><%=h convertDateTimeToShortFormat(@project.end_projected) %></td>
+	<tr><td>Total Modules:</td><td><%=h @project.box_count %></td>
+	<tr><td>Total SF:</td><td><%=h @project.size %></td>
+</table>
+
+<h2>Module Summary</h2>
+<table>
+ 	<tr><td>Completed:</td><td><%=h getModulesCompleted(@project.boxes) %></td></tr>
+	<tr><td>w/ Punchlist:</td><td><%=h getModulesCompletedWithPunchlist(@project.boxes) %></td></tr>
+	<tr><td>In Plant:</td><td><%=h getModulesInProcess(@project.boxes) %></td></tr>
+	<tr><td>Remaining:</td><td><%=h getModulesRemaining(@project) %></td></tr>
+</table>
+
+<h2>Weekly Production</h2>
+<table>
+	<tr>
+		<th></th>
+		<th colspan="2" align="center">Started</th>
+		<th colspan="3" align="center">Completed</th>
+	</tr>
+	<tr>
+		<th align="center">Week</th>
+		<th align="center">Projected</th>
+		<th align="center">Actual</th>
+		<th align="center">Projected</th>
+		<th align="center">Actual</th>
+		<th align="center">w/ Punchlist</th>
+	</tr>
+	<% ayData = getModuleProductionData(@project) %>
+	<% ayData.each do |ayInterval| %>
+	<tr>
+		<td align="center"><%=h convertDateTimeToShortFormat(ayInterval[0]) + " - " + convertDateTimeToShortFormat(ayInterval[1] - 1.minutes) %></td>
+		<td align="center"><%=h convertZeroToBlank(ayInterval[2]) %></td>
+		<td align="center"><%=h convertZeroToBlank(ayInterval[3]) %></td>
+		<td align="center"><%=h convertZeroToBlank(ayInterval[4]) %></td>
+		<td align="center"><%=h convertZeroToBlank(ayInterval[5]) %></td>
+		<td align="center"><%=h convertZeroToBlank(ayInterval[6]) %></td>
+	</tr>
+	<% end %>
+	<% ayTotals = getProductionTotalsToDate(ayData) %>
+	<tr>
+		<th align="center">Totals to Date</th>
+		<th align="center"><%=h convertZeroToBlank(ayTotals[0]) %></th>
+		<th align="center"><%=h convertZeroToBlank(ayTotals[1]) %></th>
+		<th align="center"><%=h convertZeroToBlank(ayTotals[2]) %></th>
+		<th align="center"><%=h convertZeroToBlank(ayTotals[3]) %></th>
+		<th align="center"><%=h convertZeroToBlank(ayTotals[4]) %></th>
+	</tr>
+</table>
+
+<br />
+<%= link_to 'Back to Project', project_path(@project) %>

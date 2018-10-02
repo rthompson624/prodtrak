@@ -1,0 +1,43 @@
+<h1>Editing Project</h1>
+
+<% form_for(@project) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </p>
+  <p>
+    <%= f.label 'Start projected (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :start_projected %>
+  </p>
+  <p>
+    <%= f.label 'End projected (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :end_projected %>
+  </p>
+  <p>
+    <%= f.label 'Start actual (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :start_actual %>
+  </p>
+  <p>
+    <%= f.label 'End actual (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :end_actual %>
+  </p>
+  <p>
+    <%= f.label "Modules" %><br />
+    <%= f.text_field :box_count %>
+  </p>
+  <p>
+    <%= f.label "Size (SF)" %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', projects_path %>

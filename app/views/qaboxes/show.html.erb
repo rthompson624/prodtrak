@@ -1,0 +1,16 @@
+<h1>Q/A Status</h1>
+<h2>Module: <%=h @box.serial %></h2>
+
+<% if @box.end_actual.nil? %>
+	<h3><%= link_to 'Sign-off (ready to ship)', "/qaboxes/" + @box.id.to_s() + "/signoff" %></h3>
+<% else %>
+	<h3>Sign-off Date: <%=h convertDateTimeToShortFormat(@box.end_actual)%></h3>
+<% end %>
+
+<br />
+<%= render :partial=>"punchlist_list", :locals=>{:punchlists=>@box.punchlists}%>
+<br />
+<br />
+<%= render :partial=>"new_punchlist", :locals=>{:punchlist=>Punchlist.new(:box_id=>@box.id)} %>
+
+<%= link_to 'Back to project', @box.project %>

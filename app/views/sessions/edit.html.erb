@@ -1,0 +1,24 @@
+<h1>Editing session</h1>
+
+<% form_for(@session) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :session_hash %><br />
+    <%= f.text_field :session_hash %>
+  </p>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.datetime_select :login %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @session %> |
+<%= link_to 'Back', sessions_path %>

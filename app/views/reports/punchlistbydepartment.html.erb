@@ -1,0 +1,27 @@
+<h1>Open Punchlist Report by Department</h1>
+
+<h2>Project: <%=h @project.name %></h2>
+
+<h3>Department: <%=h @department.name %></h3>
+
+<br />
+<table>
+  <tr>
+    <th>Module</th>
+    <th>Location</th>
+    <th>Material</th>
+    <th>Description</th>
+  </tr>
+
+<% @punchlists.each do |punchlist| %>
+  <tr>
+    <td><%=h punchlist.box.serial %></td>
+    <td><%=h punchlist.location %></td>
+    <td><%=h punchlist.material %></td>
+    <td><%=h punchlist.description %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<a href="/reports/departmentselector/<%= @project.id %>">Back to Department Selector</a>

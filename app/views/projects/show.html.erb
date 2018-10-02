@@ -1,0 +1,21 @@
+<h1>Project: <%=h @project.name %></h1>
+
+<h2>Number: <%=h @project.number %></h2>
+
+<br />
+<h2>Reports:</h2>
+<a href="/reports/production/<%= @project.id %>">Production Report</a>
+<br />
+<a href="/reports/punchlist/<%= @project.id %>">Open Punchlist Report</a>
+<br />
+<a href="/reports/departmentselector/<%= @project.id %>">Open Punchlist Report by Department</a>
+<br />
+
+<br />
+<h2>Production Sequence:</h2>
+<%= render :partial=>"box_list", :locals=>{:boxes=>@project.boxes}%>
+<br />
+<% if (@user.role == "superuser") || (@user.role == "productionadmin") %>
+<%= render :partial=>"new_box", :locals=>{:box=>Box.new(:project_id=>@project.id)} %>
+<% end %>
+<%= link_to 'Back to project list', projects_path %>

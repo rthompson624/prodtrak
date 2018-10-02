@@ -1,0 +1,106 @@
+Host: RailsPlayground.com
+
+domain: capsys-prodtrak.railsplayground.net
+user: rthompson624@gmail.com
+password: puravida*8
+Your Order Number is: 2393613760
+
+Site Admin
+user: capsyspr
+password: 75gu8qaXZ8
+
+Dear Richard Thompson,
+
+PLEASE READ THIS EMAIL IN FULL AND PRINT IT FOR YOUR RECORDS
+
+Thank you for your order, your hosting account has now been setup and this email contains all the information you will need in order to begin using your account.
+
+If you have requested a domain name during sign up, please keep in mind that your domain name will not be visible on the internet instantly. This process is called propagation and can take up to 48 hours. Until your domain has propagated, your website and email will not function, we have provided a temporary url which you may use to view your website and upload files in the meantime.
+
+New Account Information
+
+Hosting Package: Level One
+Domain: capsys-prodtrak.railsplayground.net
+First Payment Amount: $60.00 USD
+Recurring Amount: $60.00 USD
+Billing Cycle: Annually
+Next Due Date: 04/23/2012
+
+Login Details
+
+Username: capsyspr
+Password: 75gu8qaXZ8
+
+Control Panel URL: https://74.63.4.138:2083/
+Once your domain has propagated, you may also use https://www.capsys-prodtrak.railsplayground.net:2083/
+
+Server Information
+
+Server Name: ephesus
+Server IP: 74.63.4.138
+
+If you are using an existing domain with your new hosting account, you will need to update the nameservers to point to the nameservers listed below.
+
+Nameserver 1: ns1.railsplayground.net (208.101.26.66)
+Nameserver 2: ns26.railsplayground.net (74.63.4.140)
+
+Uploading Your Website
+
+Temporarily you may use one of the addresses given below to manage your web site:
+
+Temporary FTP Hostname: 74.63.4.138
+
+If you need to access your website before changing your nameservers, please contact us and we can setup a railsplayground.net subdomain you can use.
+
+And once your domain has propagated you may use the details below:
+
+FTP Hostname: capsys-prodtrak.railsplayground.net
+Webpage URL: http://www.capsys-prodtrak.railsplayground.net
+
+For information on deploying a Rails application, please see our wiki at:
+
+http://wiki.railsplayground.com/railsplayground/show/How+To+Use+Rails+at+RailsPlayground
+
+We also have a screencast tutorial available that explains how to deploy your application using FastCGI:
+
+https://support.hostingplayground.com/index.php?_m=knowledgebase&_a=viewarticle&kbarticleid=28&group=railsplayground
+
+If you would like to use Passenger please send a request to support@railsplayground.net with the following information:
+
+1. Login Name
+2. Domain name or subdomain you would like to use with passenger
+3. Path to your rails application if not in ~/railsapp
+4. We will send you instructions on using passenger after everything is setup.
+
+ 
+
+Free SourceRepo.com SVN, Git, HG Hosting Account
+
+To signup for you free SourceRepo.com account please visit the following URL:
+http://billing.sourcerepo.com/cart.php?a=add&pid=10
+
+SourceRepo uses a separate billing system from RailsPlayground, you will need to enter in your name and contact details, however, a credit card is not required for the free account. After you place your order for your free account, you will receive an email with further setup instructions.
+ 
+
+Email Settings
+
+For email accounts that you setup, you should use the following connection details in your email program:
+
+POP3 Host Address: mail.capsys-prodtrak.railsplayground.net
+SMTP Host Address: mail.capsys-prodtrak.railsplayground.net
+Username: The email address you are checking email for
+Password: As specified in your control panel
+
+Resources
+
+Knowledgebase and helpdesk: http://support.hostingplayground.com/?group=railsplayground
+Wiki: http://wiki.railsplayground.com
+Forums: https://forums.hostingplayground.com
+Chat Room: http://chat.hostingplayground.com
+Billing Portal: https://billing.railsplayground.net
+
+If you have any questions, send us an email at support@railsplayground.com or visit our online chat room at http://chat.hostingplayground.com
+
+--
+Joe Clarke
+RailsPlayground.com

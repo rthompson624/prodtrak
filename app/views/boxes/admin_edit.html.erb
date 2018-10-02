@@ -1,0 +1,27 @@
+<h1>Editing Module <%= @box.serial %></h1>
+
+<% form_for @box, :url => "/boxes/" + @box.id.to_s() + "/admin_update" do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label "Start projected (YYYY-MM-DD HH:MM)" %><br />
+    <%= f.text_field :start_projected %>
+  </p>
+  <p>
+    <%= f.label "End projected (YYYY-MM-DD HH:MM)" %><br />
+    <%= f.text_field :end_projected %>
+  </p>
+  <p>
+    <%= f.label :size %><br />
+    <%= f.text_field :size %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to Project', @box.project %>

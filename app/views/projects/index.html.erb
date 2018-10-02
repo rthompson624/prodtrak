@@ -1,0 +1,35 @@
+<h1>Projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Modules</th>
+    <th>Size (SF)</th>
+    <th></th>
+	<% if @user.role == "superuser" %>
+    <th></th>
+	<th></th>
+	<% end %>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%=h project.name %></td>
+    <td align="center"><%=h project.number %></td>
+    <td align="center"><%=h project.box_count %></td>
+    <td align="center"><%=h project.size %></td>
+    <td><%= link_to 'Production / QA', project %></td>
+	<% if @user.role == "superuser" %>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if @user.role == "superuser" %>
+<%= link_to 'Create new project', new_project_path %>
+<% end %>

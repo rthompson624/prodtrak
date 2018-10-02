@@ -1,0 +1,26 @@
+<h1>Current Punchlist</h1>
+<h2>Module: <%=h @box.serial %></h2>
+
+<br />
+<table>
+  <tr>
+    <th>Department</th>
+    <th>Location</th>
+    <th>Material</th>
+    <th>Description</th>
+    <th>Completed</th>
+  </tr>
+
+<% @box.punchlists.each do |punchlist| %>
+  <tr>
+    <td><%=h punchlist.department.name %></td>
+    <td><%=h punchlist.location %></td>
+    <td><%=h punchlist.material %></td>
+    <td><%=h punchlist.description %></td>
+    <td><%=h convertDateTimeToShortFormat(punchlist.completed) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'Back to project', @box.project %>

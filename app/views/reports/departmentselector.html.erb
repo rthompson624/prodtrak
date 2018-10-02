@@ -1,0 +1,20 @@
+<h1>Open Punchlist Report by Department</h1>
+
+<h2>Project: <%=h @project.name %></h2>
+
+<br />
+<table>
+  <tr>
+    <th>Department</th>
+  </tr>
+
+<% @departments.each do |department| %>
+  <tr>
+    <td><a href="/reports/punchlistbydepartment/<%= @project.id %>/<%= department.id %>"><%=h department.name %></a></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back to Project', project_path(@project) %>

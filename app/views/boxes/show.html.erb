@@ -1,0 +1,43 @@
+<p>
+  <b>Project:</b>
+  <%=h @box.project_id %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%=h @box.serial %>
+</p>
+
+<p>
+  <b>Start projected:</b>
+  <%=h @box.start_projected %>
+</p>
+
+<p>
+  <b>End projected:</b>
+  <%=h @box.end_projected %>
+</p>
+
+<p>
+  <b>Start actual:</b>
+  <%=h @box.start_actual %>
+</p>
+
+<p>
+  <b>Plant discharge:</b>
+  <%=h @box.plant_discharge %>
+</p>
+
+<p>
+  <b>End actual:</b>
+  <%=h @box.end_actual %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @box.size %>
+</p>
+
+
+<%= link_to 'Edit', edit_box_path(@box) %> |
+<%= link_to 'Back', boxes_path %>

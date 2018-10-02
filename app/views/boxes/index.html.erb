@@ -1,0 +1,34 @@
+<h1>Listing boxes</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Serial</th>
+    <th>Start projected</th>
+    <th>End projected</th>
+    <th>Start actual</th>
+    <th>Plant discharge</th>
+    <th>End actual</th>
+    <th>Size</th>
+  </tr>
+
+<% @boxes.each do |box| %>
+  <tr>
+    <td><%=h box.project_id %></td>
+    <td><%=h box.serial %></td>
+    <td><%=h box.start_projected %></td>
+    <td><%=h box.end_projected %></td>
+    <td><%=h box.start_actual %></td>
+    <td><%=h box.plant_discharge %></td>
+    <td><%=h box.end_actual %></td>
+    <td><%=h box.size %></td>
+    <td><%= link_to 'Show', box %></td>
+    <td><%= link_to 'Edit', edit_box_path(box) %></td>
+    <td><%= link_to 'Destroy', box, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New box', new_box_path %>

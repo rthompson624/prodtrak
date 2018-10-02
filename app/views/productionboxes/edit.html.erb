@@ -1,0 +1,28 @@
+<h1>Production Status of Module <%= @box.serial %></h1>
+
+<% form_for @box, :url => productionbox_path(@box.id) do |f| %>
+  <%= f.error_messages %>
+
+	<%= f.hidden_field :project_id %>
+	<%= f.hidden_field :serial %>
+	<%= f.hidden_field :start_projected %>
+	<%= f.hidden_field :end_projected %>
+  <p>
+    <%= f.label 'Chassis Start (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :start_actual %>
+  </p>
+  <p>
+    <%= f.label 'Plant Discharge (YYYY-MM-DD HH:MM)' %><br />
+    <%= f.text_field :plant_discharge %>
+  </p>
+	<%= f.hidden_field :end_projected %>
+	<%= f.hidden_field :size %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Current Punchlist for Module ' + @box.serial, productionbox_path(@box.id) %>
+<br />
+<br />
+<%= link_to 'Back to project', @box.project %>
